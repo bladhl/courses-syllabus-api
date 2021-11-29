@@ -32,7 +32,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
   
-  CATEGORY_CHOICES = [('C','Contratado'), ('N','Nombrado')]
+  CATEGORY_CHOICES = [('Contratado','Contratado'), ('Nombrado','Nombrado')]
   
   code = models.CharField('Código', max_length=6, unique=True)
   id_card = models.CharField('DNI', max_length=8, unique=True)
@@ -41,7 +41,7 @@ class User(AbstractBaseUser, PermissionsMixin):
   last_name2 = models.CharField('Apellido Materno', max_length=255, blank=True, null=True)
   email = models.EmailField('Correo Electrónico', max_length=255, unique=True)
   phone = models.CharField('Número de celular', max_length=9)
-  category = models.CharField('Categoría', max_length=1, choices=CATEGORY_CHOICES)
+  category = models.CharField('Categoría', max_length=10, choices=CATEGORY_CHOICES)
   image = models.ImageField('Imagen de perfil', upload_to='perfil/', max_length=255, blank=True, null=True)
   is_active = models.BooleanField('Activo', default=True)
   is_staff = models.BooleanField('Administrador', default=False)
