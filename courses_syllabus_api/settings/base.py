@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'syllabus_api.urls'
+ROOT_URLCONF = 'courses_syllabus_api.urls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'syllabus_api.wsgi.application'
+WSGI_APPLICATION = 'courses_syllabus_api.wsgi.application'
 
 
 # Password validation
