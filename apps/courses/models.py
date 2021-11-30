@@ -16,7 +16,7 @@ class CourseCategory(models.Model):
     return self.code
 
   
-class Couse(models.Model):
+class Course(models.Model):
   name = models.CharField('Nombre', max_length=255)
   credits = models.PositiveSmallIntegerField('Creditos')
   category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE, verbose_name='Categoria del Curso')

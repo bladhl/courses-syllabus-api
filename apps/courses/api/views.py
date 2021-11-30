@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.parsers import JSONParser, MultiPartParser
 
 
-from apps.courses.models import CourseCategory, Couse
+from apps.courses.models import CourseCategory, Course
 from apps.courses.api.serializers import CourseSerializer, CourseCategorySerializer
 
 class CourseCategoryViewSet(viewsets.ModelViewSet):
@@ -21,7 +21,7 @@ class CourseCategoryViewSet(viewsets.ModelViewSet):
   
 
 class CourseViewSet(viewsets.ModelViewSet):
-  model = Couse
+  model = Course
   serializer_class = CourseSerializer
   
   def get_queryset(self, pk=None):

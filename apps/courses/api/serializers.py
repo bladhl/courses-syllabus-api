@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.courses.models import CourseCategory, Couse
+from apps.courses.models import CourseCategory, Course
 
 
 class CourseCategorySerializer(serializers.ModelSerializer):
@@ -10,7 +10,7 @@ class CourseCategorySerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
   
   class Meta:
-    model = Couse
+    model = Course
     fields = '__all__'
   
   def to_representation(self, instance):
