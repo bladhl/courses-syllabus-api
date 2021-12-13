@@ -19,13 +19,19 @@ from rest_framework.routers import DefaultRouter
 from apps.users.api.routers import router as user_router
 from apps.courses.api.routers import router as courses_router
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
 
 router = DefaultRouter()
 router.registry.extend(user_router.registry)
 router.registry.extend(courses_router.registry)
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
